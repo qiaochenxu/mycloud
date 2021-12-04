@@ -21,7 +21,7 @@ public class PaymentController {
     private PaymentService paymentService;
 
     @PostMapping(value = "/payment/creater")
-    public CommonResult creater( @RequestBody Payment payment) {
+    public CommonResult create( @RequestBody Payment payment) {
         CommonResult commonResult = CommonResult.sueecss();
         int i = paymentService.create(payment);
         log.info("****插入结果:"+i);
