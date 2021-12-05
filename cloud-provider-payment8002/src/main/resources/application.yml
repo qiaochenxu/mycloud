@@ -1,0 +1,23 @@
+server:
+  port: 8002
+
+spring:
+  application:
+    name: payment-service-8002
+  datasource:
+    driver-class-name: org.gjt.mm.mysql.Driver
+    url: jdbc:mysql://localhost:3306/db2019?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    type: com.alibaba.druid.pool.DruidDataSource
+    username: root
+    password: root123
+
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka
+
+mybatis:
+  type-aliases-package: com.personage.springcloud.entities
+  mapper-locations: classpath:mapper/*.xml
