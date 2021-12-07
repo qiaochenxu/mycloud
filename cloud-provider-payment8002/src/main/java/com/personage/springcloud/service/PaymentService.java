@@ -4,5 +4,6 @@ import com.personage.springcloud.entities.Payment;
 import com.personage.springcloud.result.CommonResult;
 
 public interface PaymentService {
-    public CommonResult create(Payment payment);
+    public int create(Payment payment);
+    public Payment getPaymentById(Long id);
 }

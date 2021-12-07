@@ -19,17 +19,18 @@ public class PaymentServiceImpl implements PaymentService {
     @Resource
     private PaymentDao paymentDao;
     @Override
-    public CommonResult create(Payment payment) {
+    public int create(Payment payment) {
         CommonResult commonResult = CommonResult.sueecss();
-        int i = paymentDao.create(payment);
-        if (i >0) {
-            commonResult.setData(i);
-        } else {
-            commonResult.setCode(-1);
-            commonResult.setMessage("添加失败");
-            commonResult.setData(i);
-        }
+        paymentDao.create(payment);
 
-        return commonResult;
+
+        return paymentDao.create(payment);
+    }
+
+    @Override
+    public Payment getPaymentById(Long id) {
+        paymentDao.getPaymentById(id);
+
+        return paymentDao.getPaymentById(id);
     }
 }

@@ -20,7 +20,7 @@ public class PaymentController {
     @Resource
     private PaymentService paymentService;
 
-    @PostMapping(value = "/payment/creater")
+    @PostMapping(value = "/payment/create")
     public CommonResult create( @RequestBody Payment payment) {
         CommonResult commonResult = CommonResult.sueecss();
         int i = paymentService.create(payment);
