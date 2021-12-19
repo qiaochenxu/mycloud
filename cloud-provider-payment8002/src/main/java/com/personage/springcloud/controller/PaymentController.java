@@ -4,6 +4,7 @@ import com.personage.springcloud.entities.Payment;
 import com.personage.springcloud.result.CommonResult;
 import com.personage.springcloud.service.PaymentService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -17,14 +18,17 @@ import javax.annotation.Resource;
 @RestController
 @Slf4j
 public class PaymentController {
+    @Value("${server.port}")
+    private String serverPort;
     @Resource
     public PaymentService paymentService;
-    @RequestMapping("/payment/create")
+    @PostMapping("/payment/create")
     public CommonResult create(@RequestBody Payment payment){
         CommonResult commonResult = CommonResult.sueecss();
         int i = paymentService.create(payment);
         log.info("插入结果:{}",i);
         if (i> 0){
+            commonResult.setMessage("插入成功,post:{"+serverPort+"}");
             commonResult.setData(i);
         } else {
             commonResult.setCode(-1);
@@ -45,6 +49,7 @@ public class PaymentController {
             commonResult.setData("null");
         } else {
             commonResult.setData(paymentById);
+            commonResult.setMessage("查询成功，post:{"+serverPort+"}");
         }
 
         return commonResult;
