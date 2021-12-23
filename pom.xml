@@ -14,6 +14,7 @@
       <module>cloud-eureka-server7001</module>
       <module>cloud-eureka-server7002</module>
     <module>cloud-provider-payment8002</module>
+      <module>cloud-provider-payment8004</module>
   </modules>
   <packaging>pom</packaging>
 
@@ -22,7 +23,8 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
-    <mysql.version>5.1.47</mysql.version>
+<!--    <mysql.version>5.1.47</mysql.version>-->
+    <mysql.version>8.0.27</mysql.version>
     <junit.version>4.12</junit.version>
     <log4j.version>1.2.17</log4j.version>
     <lombok.version>1.16.18</lombok.version>
