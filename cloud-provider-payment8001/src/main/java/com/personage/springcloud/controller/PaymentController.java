@@ -48,7 +48,7 @@ public class PaymentController {
     }
 
     /**
-     * 服务发现接口
+     *
      * @param id
      * @return
      */
