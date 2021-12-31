@@ -6,10 +6,8 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-public class PaymentMain8004 {
+public class ConsulConsumerMain8006 {
     public static void main(String[] args) {
-        System.setProperty("zookeeper.sasl.client","false");
-        SpringApplication.run(PaymentMain8004.class,args);
-
+        SpringApplication.run(ConsulConsumerMain8006.class,args);
     }
 }

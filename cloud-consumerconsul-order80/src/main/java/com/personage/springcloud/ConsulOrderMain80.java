@@ -1,4 +1,4 @@
-package com.prosonage.springcloud;
+package com.personage.springcloud;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,10 +6,8 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-public class PaymentMain8004 {
+public class ConsulOrderMain80 {
     public static void main(String[] args) {
-        System.setProperty("zookeeper.sasl.client","false");
-        SpringApplication.run(PaymentMain8004.class,args);
-
+        SpringApplication.run(ConsulOrderMain80.class,args);
     }
 }
