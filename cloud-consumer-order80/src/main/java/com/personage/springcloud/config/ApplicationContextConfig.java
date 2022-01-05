@@ -1,5 +1,8 @@
 package com.personage.springcloud.config;
 
+import com.netflix.loadbalancer.IRule;
+import com.netflix.loadbalancer.RetryRule;
+import com.netflix.loadbalancer.WeightedResponseTimeRule;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -18,5 +21,9 @@ public class ApplicationContextConfig {
     @LoadBalanced
     public RestTemplate getRestTemplate(){
         return new RestTemplate();
+    }
+
+    public IRule iRule(){
+        return new WeightedResponseTimeRule();
     }
 }
