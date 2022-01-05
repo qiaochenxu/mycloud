@@ -22,7 +22,7 @@ public class ApplicationContextConfig {
     public RestTemplate getRestTemplate(){
         return new RestTemplate();
     }
-
+    @Bean
     public IRule iRule(){
         return new WeightedResponseTimeRule();
     }
