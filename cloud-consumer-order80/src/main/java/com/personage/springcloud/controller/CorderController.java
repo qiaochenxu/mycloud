@@ -34,6 +34,7 @@ public class CorderController {
     @GetMapping("consumer/payment/create01")
     public CommonResult<Payment> create01(Payment payment) {
 
+
         CommonResult body = null;
         ResponseEntity<CommonResult> commonResultResponseEntity = restTemplate.postForEntity(PAYMENT_URL + "/payment/create", payment, CommonResult.class);
         if (commonResultResponseEntity.getStatusCode().is2xxSuccessful()){
