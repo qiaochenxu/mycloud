@@ -25,7 +25,5 @@ public class PaymentServiceImpl implements PaymentService {
         }
         String name = Thread.currentThread().getName();
         return "线程池："+name +"paymentInfoTimeOut,id:" + id +"\t" +"😀 耗时："+time;
-        
-        //test
     }
 }
