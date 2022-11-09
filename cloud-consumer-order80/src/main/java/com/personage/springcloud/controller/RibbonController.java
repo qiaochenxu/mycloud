@@ -23,7 +23,9 @@ public class RibbonController {
     private LadBalancer ladBalancer;
     @Resource
     private RestTemplate restTemplate;
-    @RequestMapping(value = "/payment",method = RequestMethod.GET,produces = {MediaType.APPLICATION_JSON_VALUE})
+    @RequestMapping(value = "/payment",
+            method = RequestMethod.GET,
+            produces = {MediaType.APPLICATION_JSON_VALUE})
     public String getPaymentLB(){
         List<ServiceInstance> instances = discoveryClient.getInstances("cloud-payment-service");
         if (instances == null || instances.size()<= 0) {
